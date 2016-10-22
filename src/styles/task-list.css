@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: "PT Sans", sans-serif;
+    background: #f9f5e9;
+}
+
+.figure {
+    display: block;
+    float: right;
+    max-width: 100%;
+}
+
+.figure__point {
+    stroke: #4A4A4A;
+    fill: #FFFFFF;
+}
+
+.figure__text-label {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    fill : #4A4A4A;
+}
+
+.figure__main {
+    fill-rule: evenodd;
+    fill: none;
+    stroke: #4A4A4A;
+    stroke-width : 4;
+}
+
+.figure__axes {
+    stroke: #979797;
+    stroke-linecap: square;
+}
+
+.figure__axes-label {
+    font-size :16px;
+    font-style: italic;
+    font-weight: normal;
+    fill: #222222;
+}
+
+.task {
+    position: relative;
+    padding: 25px;
+    font-size: 16px;
+    font-style: italic;
+    background: #f9f5e9;
+    max-width: 531px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.layout__additional {
+    margin: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
