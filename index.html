@@ -12,11 +12,13 @@
       padding: 0;
       min-height: 100%;
       font-family: "PT Sans", sans-serif;
+      background: #f9f5e9;
     }
 
     .figure {
       display: block;
-      position: absolute;
+      float: right;
+      max-width: 100%;
     }
 
     .figure__point {
@@ -56,22 +58,25 @@
       font-size: 14px;
       font-style: italic;
       background: #f9f5e9;
-      width:531px;
+      max-width: 531px;
       box-sizing: border-box;
+      overflow: hidden;
+      margin: auto;
+      border-bottom: 1px solid #ccc;
     }
+
   </style>
 </head>
 <body>
 
-<div class ="task" style="height: 250px;">
-
+<div class ="task">
   <text font-size="14" font-style="italic" font-weight="normal" fill="#222222">
     Довжина AB = 1 <br/>
     Визначити координати точок <br/>
     A, B, C, D, E, F
   </text>
 
-  <svg class="figure" style="left: 180px; top: 10px;" width="314px" height="208px" viewBox="0 0 314 208">
+  <svg class="figure" width="314px" height="208px" viewBox="0 0 314 208">
     <g class="figure__axes">
       <line x1="101.5" y1="22.5"  x2="101.5" y2="200"></line>
       <line x1="0.5"   y1="187.5" x2="294"   y2="187.5"></line>
@@ -96,7 +101,10 @@
     <circle r="2.5" class="figure__point" cx="173.5" cy="187.5"></circle>
     <circle r="2.5" class="figure__point" cx="66.5" cy="125.5"></circle>
   </svg>
+</div>
 
+<div class="task">
+  Сума цифр двохзначного числа рівна 6. Якщо до сього числа добавити 18, то получиться число, записане тими ж цифрами, тільки в зворотньому порядку. Найдіть це число.
 </div>
 
 </body>
