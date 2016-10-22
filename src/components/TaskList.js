@@ -29,12 +29,12 @@ const TaskList = () => (
 
       <path d="M66 125.5 l35.8-62 h71.4l35.8 62-35.8 62 h-71.4 z" className="figure__main"/>
 
-      <text classNAme="figure__text-label" x="88" y="203">A</text>
-      <text classNAme="figure__text-label" x="214" y="129">C</text>
-      <text classNAme="figure__text-label" x="179" y="62">D</text>
-      <text classNAme="figure__text-label" x="88" y="63">E</text>
-      <text classNAme="figure__text-label" x="52" y="129">F</text>
-      <text classNAme="figure__text-label" x="175" y="204">B</text>
+      <text className="figure__text-label" x="88" y="203">A</text>
+      <text className="figure__text-label" x="214" y="129">C</text>
+      <text className="figure__text-label" x="179" y="62">D</text>
+      <text className="figure__text-label" x="88" y="63">E</text>
+      <text className="figure__text-label" x="52" y="129">F</text>
+      <text className="figure__text-label" x="175" y="204">B</text>
 
       <circle r="2.5" className="figure__point" cx="173.5" cy="64.5"/>
       <circle r="2.5" className="figure__point" cx="208.5" cy="125.5"/>
