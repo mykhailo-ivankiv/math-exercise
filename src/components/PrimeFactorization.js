@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import R from 'ramda'
 
 import '../styles/prime-factorization.css';
 import BEM from '../utils/BEM';
 const b = BEM.b('prime-factorization');
 
-const primeFactorization = (num, prevRecursionIterationResults = []) => {
+const primeFactorization = R.memoize((num, prevRecursionIterationResults = []) => {
+  console.log(11111);
   let root = Math.sqrt(num),
     x = 2;
 
@@ -18,40 +20,15 @@ const primeFactorization = (num, prevRecursionIterationResults = []) => {
 
   //if num isn't prime factor make recursive call
   return (x === num) ? prevRecursionIterationResults : primeFactorization(num/x, prevRecursionIterationResults) ;
-}
+})
 
-class PrimeFactorization extends Component  {
-  constructor (props) {
-    super(props);
+const PrimeFactorization = ({value}) => (
+  <div className={b()}>
+    <span className={b("primeNumbers")}>
+      {value} {primeFactorization(value).map((number, i) => <span className={b('prime')} key={i}>{number}</span>)}
+    </span>
+  </div>
+);
 
-    this.state = {
-      primeNumbers : []
-    }
-  }
-
-  handleInputChange (ev) {
-    const primeNumbers = primeFactorization(ev.target.value);
-    this.setState({primeNumbers});
-  }
-
-  render () {
-    const {primeNumbers} = this.state;
-
-    return (
-      <div className={b()}>
-        Розклад числа на прості множники. <br/>
-        <input
-          placeholder="Складне число"
-          type="number"
-          onChange={this.handleInputChange.bind(this)} />
-        <span className={b("primeNumbers")}>
-          {primeNumbers.map((number, i) => <span className={b('prime')} key={i}>{number}</span>)}
-        </span>
-      </div>
-    )
-  }
-
-
-}
 
 export default PrimeFactorization;
