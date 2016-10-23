@@ -6,7 +6,6 @@ import BEM from '../utils/BEM';
 const b = BEM.b('prime-factorization');
 
 const primeFactorization = R.memoize((num, prevRecursionIterationResults = []) => {
-  console.log(11111);
   let root = Math.sqrt(num),
     x = 2;
 
