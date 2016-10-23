@@ -1,0 +1,14 @@
+.prime-factorization {
+    &__prime {
+        fonst-size: 16px;
+
+        &:before {
+            content: " x ";
+            color: #ccc;
+        }
+
+        &:first-child&:before {
+            content: " = ";
+        }
+    }
+}

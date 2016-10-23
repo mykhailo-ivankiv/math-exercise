@@ -13,10 +13,13 @@ import {
 import {callRegisterComponentDependencies} from '../reducers/router';
 
 import TaskList from './TaskList';
+import PrimeFactorization from './PrimeFactorization';
 
 export let App = ({router}) => (
   <Layout>
     <DevTools/>
+    {router.name && <PrimeFactorization/>}
+
     {router.name && <TaskList/>}
   </Layout>
 );
