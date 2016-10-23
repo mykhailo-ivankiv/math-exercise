@@ -15,7 +15,7 @@ let webpackConfig = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'static'),
     filename: 'app.frontend.js',
     publicPath: '/static/'
   },
