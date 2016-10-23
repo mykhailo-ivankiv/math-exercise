@@ -8,8 +8,9 @@ const b = BEM.b('layout');
 const TaskList = () => (
   <div>
     <aside className="layout__additional">
-      <a href="https://www.e-olymp.com/uk/">www.e-olymp.com</a><br/>
-      <a href="http://math4school.ru/">math4school.ru/</a><br/>
+      <a href="https://www.e-olymp.com/uk/">e-olymp (ua)</a><br/>
+      <a href="http://math4school.ru/">Math 4 School (ru)</a><br/>
+      <a href="https://www.wolframalpha.com/problem-generator/?scrollTo=Linearalgebra">Wolfram problem generator (en)</a><br/>
     </aside>
 
     <div className="task">
