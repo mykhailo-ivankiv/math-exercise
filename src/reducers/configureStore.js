@@ -12,7 +12,13 @@ const logger = createLogger({collapsed: true});
 
 import DevTools from '../components/DevTools';
 
-const initialState = {...loadState()};
+import {tasks} from '../api/data';
+const initialState = {
+  ...loadState(),
+  tasks
+};
+
+console.log(initialState);
 
 const enhancer = compose(
   // Middleware you want to use in development:
