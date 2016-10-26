@@ -29,6 +29,7 @@ import {
 } from '../reducers'
 
 import PrimeFactorization from './PrimeFactorization';
+import Helpers from './Helpers';
 
 class Search extends Component {
 
@@ -70,6 +71,7 @@ class Search extends Component {
             }
 
             {R.isEmpty(numbers) && "Немає результатів пошуку"}
+            <Helpers/>
           </div>
         }
 

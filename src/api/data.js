@@ -44,8 +44,10 @@ export const tasks = [
 
 export const helpers = [
   {
-    title: "",
-    tags: [],
-    description: "",
+    title: "Квадратне рівняння",
+    tags: ["Дискрімінант"],
+    description: `
+      ${katex.renderToString('{\displaystyle 4a^{2}x^{2}+4axb+4ac=0\!}'),
+    `,
   }
 ]
