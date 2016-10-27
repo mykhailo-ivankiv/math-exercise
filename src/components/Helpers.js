@@ -1,9 +1,13 @@
 import React from 'react';
+import {helpers} from '../api/data';
 
 const Helpers = () => (
   <div>
-    Helpers!
+    {helpers
+      .map (helper =>
+        (<div dangerouslySetInnerHTML={{__html: helpers[0].description}}/>))
+    }
   </div>
 )
 
-export  Helpers;
+export default Helpers;

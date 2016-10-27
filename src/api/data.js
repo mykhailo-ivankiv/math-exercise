@@ -1,5 +1,12 @@
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
+import '../styles/math.css';
+
+import R from 'ramda';
+
+let $$ = R.curry (katex.renderToString) (R.__, {displayMode: true});
+let $_ = R.curry (katex.renderToString) (R.__, {displayMode: false});
+
 
 export const tasks = [
   `
@@ -47,7 +54,9 @@ export const helpers = [
     title: "Квадратне рівняння",
     tags: ["Дискрімінант"],
     description: `
-      ${katex.renderToString('{\displaystyle 4a^{2}x^{2}+4axb+4ac=0\!}'),
-    `,
+      <span class="math">${$$('ax^{2}+bx+c=0')}</span>
+      <span class="math">${$$('D = b^{2}-4ac')}</span>
+      <span class="math">${$$('x_{1,2} = \\frac{-b \\pm \\sqrt D}{2a}')}</span>
+    `
   }
-]
+];
