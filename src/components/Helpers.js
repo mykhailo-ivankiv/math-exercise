@@ -5,7 +5,7 @@ const Helpers = () => (
   <div>
     {helpers
       .map (helper =>
-        (<div dangerouslySetInnerHTML={{__html: helpers[0].description}}/>))
+        (<div dangerouslySetInnerHTML={{__html: helper.description}}/>))
     }
   </div>
 )
