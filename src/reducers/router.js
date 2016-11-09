@@ -64,8 +64,6 @@ export const getPreviousRoute = (state) => ({...state.prev});
 
 
 
-
-
 //Application specific stuff;
 let registeredComponents = new Map();
 export const connectRouter = (mapStateToProps, mapDispatchToProps) => (component) => (dataFetcher) => {

@@ -38,7 +38,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
-    "d3": "^4.2.7",
+    "d3": "^4.3.0",
     "interact.js": "^1.2.6",
     "katex": "^0.6.0",
     "lodash": "^4.16.2",
