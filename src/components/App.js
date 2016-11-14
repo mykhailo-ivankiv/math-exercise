@@ -14,6 +14,7 @@ import {callRegisterComponentDependencies} from '../reducers/router';
 
 import TaskList from './TaskList';
 import D3jsDemo from './D3jsDemo';
+import Draft from './Draft';
 
 export let App = ({router}) => (
   <Layout>
@@ -21,6 +22,7 @@ export let App = ({router}) => (
     <DevTools/>
     {router.name === "home" && <TaskList/>}
     {router.name === "d3js" && <D3jsDemo/>}
+    {router.name === "draft" && <Draft/>}
   </Layout>
 );
 

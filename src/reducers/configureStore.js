@@ -18,8 +18,6 @@ const initialState = {
   tasks
 };
 
-console.log(initialState);
-
 const enhancer = compose(
   // Middleware you want to use in development:
   applyMiddleware(thunk, promise, logger),
