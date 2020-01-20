@@ -1,12 +1,9 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-
-import '../styles/search.css';
-import BEM from '../utils/BEM';
-const b = BEM.b('search');
-
-
-import R from 'ramda';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as R from "ramda";
+import "../styles/search.css";
+import BEM from "../utils/BEM";
+const b = BEM.b("search");
 
 let getWords = R.split(/[,\s]/gi);
 let toInt = R.map(word => parseInt(word));
@@ -18,38 +15,31 @@ let getNumbers = R.pipe(
   getInt
 );
 
+import { searchNew, searchChange } from "../actions/search";
 
-import {
-  searchNew,
-  searchChange,
-} from "../actions/search";
+import { getCurrentSearch } from "../reducers";
 
-import {
-  getCurrentSearch
-} from '../reducers'
-
-import PrimeFactorization from './PrimeFactorization';
-import Helpers from './Helpers';
+import PrimeFactorization from "./PrimeFactorization";
+import Helpers from "./Helpers";
 
 class Search extends Component {
-
-  handleKeyPress (ev) {
-    if (ev.keyCode === 13) { //Enter
+  handleKeyPress(ev) {
+    if (ev.keyCode === 13) {
+      //Enter
       ev.preventDefault();
 
-      const {searchNew} = this.props;
+      const { searchNew } = this.props;
       searchNew("");
     }
-
   }
 
-  handleChange (ev) {
-    const {searchChange} = this.props;
+  handleChange(ev) {
+    const { searchChange } = this.props;
     searchChange(ev.target.value);
   }
 
-  render () {
-    const {search} = this.props;
+  render() {
+    const { search } = this.props;
     const numbers = getNumbers(search);
 
     return (
@@ -59,31 +49,37 @@ class Search extends Component {
           value={search}
           type="text"
           onKeyDown={this.handleKeyPress.bind(this)}
-          onChange={this.handleChange.bind(this)}/>
+          onChange={this.handleChange.bind(this)}
+        />
 
-        {search &&
+        {search && (
           <div className={b("results")}>
-            {R.not(R.isEmpty(numbers)) &&
-            <div className="result-item">
-              <div className={b("result-item-description")}>Прості множники:</div>
-              {numbers.map(number => <PrimeFactorization value={number}/>)}
-            </div>
-            }
+            {R.not(R.isEmpty(numbers)) && (
+              <div className="result-item">
+                <div className={b("result-item-description")}>
+                  Прості множники:
+                </div>
+                {numbers.map(number => (
+                  <PrimeFactorization value={number} />
+                ))}
+              </div>
+            )}
 
             {R.isEmpty(numbers) && "Немає результатів пошуку"}
-            <Helpers/>
+            <Helpers />
           </div>
-        }
-
+        )}
       </form>
-    )
+    );
   }
-};
+}
 
-export default connect (
+export default connect(
   state => ({
     search: getCurrentSearch(state)
-  }), {
+  }),
+  {
     searchNew,
-    searchChange,
-  })(Search);
+    searchChange
+  }
+)(Search);

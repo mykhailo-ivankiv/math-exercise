@@ -1,12 +1,10 @@
-import katex from 'katex';
-import 'katex/dist/katex.min.css';
-import '../styles/math.css';
+import katex from "katex";
+import "katex/dist/katex.min.css";
+import "../styles/math.css";
+import * as R from "ramda";
 
-import R from 'ramda';
-
-let $$ = R.curry (katex.renderToString) (R.__, {displayMode: true});
-let $_ = R.curry (katex.renderToString) (R.__, {displayMode: false});
-
+let $$ = R.curry(katex.renderToString)(R.__, { displayMode: true });
+let $_ = R.curry(katex.renderToString)(R.__, { displayMode: false });
 
 export const tasks = [
   `
@@ -46,7 +44,9 @@ export const tasks = [
   `Сума двох чисел дорівнює 15, а середнє арифметичне на 25% більше середнього геометричного. Знайдіть ці числа.`,
 
   `Знайдіть х, якщо: <br/> 
-    ${katex.renderToString('\\frac{0,1(6) + 0,(3)}{0,(3)+1,1(6)}x=10',  { displayMode: true })}`,
+    ${katex.renderToString("\\frac{0,1(6) + 0,(3)}{0,(3)+1,1(6)}x=10", {
+      displayMode: true
+    })}`
 ];
 
 export const helpers = [
@@ -54,9 +54,9 @@ export const helpers = [
     title: "Квадратне рівняння",
     tags: ["Дискрімінант"],
     description: `
-      <span class="math">${$$('ax^{2}+bx+c=0')}</span>
-      <span class="math">${$$('D = b^{2}-4ac')}</span>
-      <span class="math">${$$('x_{1,2} = \\frac{-b \\pm \\sqrt D}{2a}')}</span>
+      <span class="math">${$$("ax^{2}+bx+c=0")}</span>
+      <span class="math">${$$("D = b^{2}-4ac")}</span>
+      <span class="math">${$$("x_{1,2} = \\frac{-b \\pm \\sqrt D}{2a}")}</span>
     `
   },
   {

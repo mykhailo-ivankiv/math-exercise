@@ -1,18 +1,14 @@
-import reducers from './index';
-import {popState} from '../actions/router';
-import {loadState, saveState} from '../api/localStorage';
+import reducers from "./index";
+import { popState } from "../actions/router";
+import { loadState, saveState } from "../api/localStorage";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import promise from "redux-promise";
+import logger from "redux-logger";
 
-import {createStore, applyMiddleware, compose} from 'redux';
+import DevTools from "../components/DevTools";
 
-import thunk from 'redux-thunk';
-import promise from 'redux-promise';
-
-import createLogger from 'redux-logger';
-const logger = createLogger({collapsed: true});
-
-import DevTools from '../components/DevTools';
-
-import {tasks} from '../api/data';
+import { tasks } from "../api/data";
 const initialState = {
   ...loadState(),
   tasks
@@ -26,20 +22,15 @@ const enhancer = compose(
 );
 
 const configureStore = () => {
-  const store = createStore (reducers, initialState, enhancer);
+  const store = createStore(reducers, initialState, enhancer);
 
-  window.addEventListener('popstate', () => store.dispatch(popState(location.pathname)));
-
-  // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
-  if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers').default)
-    );
-  }
+  window.addEventListener("popstate", () =>
+    store.dispatch(popState(location.pathname))
+  );
 
   store.subscribe(() => {
-    saveState({me: store.getState().me}); //TODO: add throttle
-  })
+    saveState({ me: store.getState().me }); //TODO: add throttle
+  });
 
   return store;
 };
