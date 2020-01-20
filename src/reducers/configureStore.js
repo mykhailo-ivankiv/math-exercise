@@ -6,8 +6,6 @@ import thunk from "redux-thunk";
 import promise from "redux-promise";
 import logger from "redux-logger";
 
-import DevTools from "../components/DevTools";
-
 import { tasks } from "../api/data";
 const initialState = {
   ...loadState(),
@@ -15,10 +13,7 @@ const initialState = {
 };
 
 const enhancer = compose(
-  // Middleware you want to use in development:
-  applyMiddleware(thunk, promise, logger),
-  // Required! Enable Redux DevTools with the monitors you chose
-  DevTools.instrument()
+  applyMiddleware(thunk, promise, logger) // Middleware you want to use in development:
 );
 
 const configureStore = () => {
