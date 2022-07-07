@@ -37,7 +37,7 @@
     "interact.js": "^1.2.6",
     "katex": "^0.11.1",
     "lodash": "^4.16.2",
-    "moment": "^2.15.1",
+    "moment": "^2.29.4",
     "moment-range": "^2.2.0",
     "node-uuid": "^1.4.7",
     "normalizr": "^3.4.1",
